@@ -34,5 +34,6 @@ export class Reserva {
   cancha: Cancha;
 
   @OneToOne(() => Pago, (pago) => pago.reserva)
+  @JoinColumn()
   pago: Pago;
 }
