@@ -4,6 +4,6 @@ import { CanchaService } from './cancha.service';
 
 @Module({
   controllers: [CanchaController],
-  providers: [CanchaService]
+  providers: [CanchaService],
 })
 export class CanchaModule {}
