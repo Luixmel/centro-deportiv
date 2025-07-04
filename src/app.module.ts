@@ -1,6 +1,9 @@
-import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsuarioModule } from './usuario/usuario.module';
+import { CanchaModule } from './cancha/cancha.module';
+import { ReservaModule } from './reserva/reserva.module';
 
 
 @Module({
@@ -16,6 +19,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    UsuarioModule,
+    CanchaModule,
+    ReservaModule,
   ],
 })
 export class AppModule {}
