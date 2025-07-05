@@ -19,27 +19,18 @@ export class ReservaService {
   ) {}
 
   async create(dto: CreateReservaDto): Promise<Reserva> {
-    const usuario = await this.usuarioRepository.findOne({
-      where: { id: dto.usuarioId },
-    });
-    const cancha = await this.canchaRepository.findOne({
-      where: { id: dto.canchaId },
-    });
+  const reserva = this.reservaRepository.create({
+    fecha_reserva: new Date(dto.fecha_reserva),
+    duracion_horas: dto.duracion_horas,
+    hora_inicio: dto.hora_inicio,
+    hora_fin: dto.hora_fin,
+    estado: dto.estado,
+    usuario: { id: dto.usuarioId },
+    cancha: { id: dto.canchaId },
+  });
+  return this.reservaRepository.save(reserva);
+}
 
-    if (!usuario) throw new NotFoundException('Usuario no encontrado');
-    if (!cancha) throw new NotFoundException('Cancha no encontrada');
-
-    const reserva = this.reservaRepository.create({
-      fecha_reserva: dto.fecha_reserva,
-      hora_inicio: dto.hora_inicio,
-      hora_fin: dto.hora_fin,
-      estado: dto.estado,
-      usuario,
-      cancha,
-    });
-
-    return this.reservaRepository.save(reserva);
-  }
 
   findAll(): Promise<Reserva[]> {
     return this.reservaRepository.find({

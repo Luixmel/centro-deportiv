@@ -1,4 +1,4 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreateCanchaDto {
   @IsString()
@@ -11,6 +11,5 @@ export class CreateCanchaDto {
   ubicacion: string;
 
   @IsString()
-  @IsOptional()
-  estado?: string; // por defecto será "disponible"
+  estado: string;
 }

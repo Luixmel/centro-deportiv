@@ -4,6 +4,9 @@ export class CreateReservaDto {
   @IsDateString()
   fecha_reserva: string;
 
+  @IsInt()
+  duracion_horas: number;
+
   @IsString()
   hora_inicio: string;
 

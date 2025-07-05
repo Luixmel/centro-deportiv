@@ -1,0 +1,142 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_888eb3d04eaf45f682f0f410d02732b1
+  created: 1749239818658
+  modified: 1749239818658
+  description: ""
+collection:
+  - name: USUARIO
+    meta:
+      id: fld_fe553a50c47d449e9c02e4534ef1afd8
+      created: 1749247898563
+      modified: 1749247898563
+      sortKey: -1749247898563
+      description: ""
+  - name: Centro Deportivo API
+    meta:
+      id: fld_6dd22ad5cafe4441a798bd0b6490b9ac
+      created: 1751679048057
+      modified: 1751684752397
+      sortKey: -1751679048057
+      description: ""
+    children:
+      - url: http://localhost:3000/usuarios
+        name: Usuarios
+        meta:
+          id: req_cb2176d524fd460286840925d05cdd7c
+          created: 1751679080446
+          modified: 1751684750063
+          isPrivate: false
+          description: ""
+          sortKey: -1751679080446
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "ssmuel contares",
+              "email": "samuelcontrares.com",
+              "telefono": "310555",
+              "fecha_registro": "2025-07-05"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        scripts:
+          preRequest: "\n"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/canchas
+        name: Canchas
+        meta:
+          id: req_d56e24b1eae04915a273b23b3d876e06
+          created: 1751681561230
+          modified: 1751683707902
+          isPrivate: false
+          description: ""
+          sortKey: -1750463493892
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "Cancha 1",
+              "tipo": "fútbol 5",
+              "ubicacion": "Zona A",
+              "estado": "disponible"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        scripts:
+          preRequest: "\n"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/reservas
+        name: Reservas
+        meta:
+          id: req_1a8ea9bd178f4c39a6ffa64b15763a5c
+          created: 1751683178724
+          modified: 1751684080198
+          isPrivate: false
+          description: ""
+          sortKey: -1749855700615
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "fecha_reserva": "2025-07-07T00:00:00.000Z",
+              "duracion_horas": 2,
+              "hora_inicio": "19:00:00",
+              "hora_fin": "21:00:00",
+              "estado": "confirmada",
+              "usuarioId": 1,
+              "canchaId": 1
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        scripts:
+          preRequest: "\n"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_db3960ca8332ddd2e1463e0db2908da4e12c05a9
+    created: 1749239818677
+    modified: 1751684752392
+environments:
+  name: Base Environment
+  meta:
+    id: env_db3960ca8332ddd2e1463e0db2908da4e12c05a9
+    created: 1749239818673
+    modified: 1751684752394
+    isPrivate: false
